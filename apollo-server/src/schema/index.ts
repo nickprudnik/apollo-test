@@ -8,6 +8,7 @@ export const typeDefs = `#graphql
     name: String
     size: Int
     owner: Owner
+    default_branch: String
   }
 
   type RepoDetails {
@@ -21,7 +22,7 @@ export const typeDefs = `#graphql
   }
 
   type Query {
-    repositories(orgName: String): [Repository],
-    repositoryDetails(orgName: String, repoName: String): RepoDetails
+    repositories(directoryName: String, directory: String): [Repository],
+    repositoryDetails(repoName: String, ownerName: String, ref: String): RepoDetails
   }
 `;

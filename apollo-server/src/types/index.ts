@@ -24,3 +24,16 @@ export type FileContext = {
   content: string;
   encoding: string;
 };
+
+export type RepoTree = {
+  sha: string;
+  url: string;
+  tree: {
+    path: string;
+    mode: string;
+    type: string;
+    sha: string;
+    size: number;
+    url: string;
+  }[];
+};

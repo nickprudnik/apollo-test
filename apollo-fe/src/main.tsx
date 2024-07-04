@@ -6,6 +6,7 @@ import './index.css';
 import { Listing } from './pages/listing.tsx';
 import { ErrorPage } from './pages/error-page.tsx';
 import { Details } from './pages/details.tsx';
+import { Home } from './pages/home.tsx';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/',
@@ -15,8 +16,12 @@ const client = new ApolloClient({
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Listing />,
+    element: <Home />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: 'listing',
+    element: <Listing />,
   },
   {
     path: 'details/:repoName',
